@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sekuya&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -115,11 +116,36 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.sekuya {
+  font-family: "Sekuya", system-ui;
+}
+
+.rubik {
+  font-family: "Rubik", sans-serif;
+}
+
+.green-ferb {
+  color: #2dff4c;
+}
+
+.purple-ferb {
+  color: #a13ef7;
+}
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
+    font-family: "Nunito Sans", sans-serif;
     @apply bg-background text-foreground;
   }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
