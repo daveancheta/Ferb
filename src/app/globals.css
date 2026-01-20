@@ -139,7 +139,7 @@
   }
 
   body {
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Sekuya", system-ui;
     @apply bg-background text-foreground;
   }
 }
