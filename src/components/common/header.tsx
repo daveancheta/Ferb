@@ -10,7 +10,7 @@ import { useState } from "react"
 function Header() {
     const [open, setopen] = useState(false)
 
-    const NavHover = "dark:text-white text-black hover:text-muted-foreground";
+    const NavHover = "dark:text-white text-black hover:text-muted-foreground dark:hover:text-muted-foreground transition-all duration-300 ease-in-out";
 
     return (
         <header className="sticky inset-0 backdrop-blur bg-background/90
