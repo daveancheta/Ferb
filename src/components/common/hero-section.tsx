@@ -39,11 +39,15 @@ function HeroSection() {
                     Next.js, Prisma, Zustand, and PostgreSQL deployed on Neon.
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-4 pt-2">
-                    <Button className="px-8 py-6 text-base font-medium">
+                <div className="flex flex-wrap justify-center gap-4 pt-4">
+                    <Button className="h-11 px-6 text-sm font-medium">
                         Get Started
                     </Button>
-                    <Button variant="outline" className="px-8 py-6 text-base font-medium">
+
+                    <Button
+                        variant="outline"
+                        className="h-11 px-6 text-sm font-medium"
+                    >
                         Learn More
                     </Button>
                 </div>
