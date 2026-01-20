@@ -1,11 +1,17 @@
 import React from 'react'
 import { Button } from '../ui/button'
+import { Sparkle } from 'lucide-react'
+import { Badge } from '../ui/badge'
 
 function HeroSection() {
     return (
         <section className="flex min-h-[85vh] items-center justify-center px-6">
-            <div className="flex max-w-5xl flex-col items-center gap-8 text-center">
 
+            <div className="flex max-w-5xl flex-col items-center gap-8 text-center">
+                <Badge variant="outline" className='flex flex-row items-center px-6 py-2'>
+                    <Sparkle />
+                    A Modern Guide to Learning Full-Stack Development
+                </Badge>
                 <h1 className="
                     font-bold
                     tracking-tight
