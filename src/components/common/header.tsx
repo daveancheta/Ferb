@@ -3,11 +3,14 @@ import { HyperText } from "../ui/hyper-text"
 import ModeToggle from "../mode-toggle"
 import { Input } from "../ui/input"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "../ui/input-group"
-import { Search } from "lucide-react"
+import { Menu, Search, X } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useState } from "react"
 
 function Header() {
-    const NavHover = "dark:text-muted-foreground text-black hover:text-muted-foreground dark:hover:text-white";
+    const [open, setopen] = useState(false)
+
+    const NavHover = "dark:text-white text-black hover:text-muted-foreground";
 
     return (
         <header className="sticky inset-0 backdrop-blur bg-background/90
@@ -16,7 +19,7 @@ function Header() {
                 <div className="flex flex-row items-center gap-8">
                     <h1 className="font-extrabold uppercase">
                         <Link href="/" className="flex flex-row items-center">
-                        <img className="w-10 h-10" src="/ferb-logo.png" alt="" />
+                            <img className="w-10 h-10" src="/ferb-logo.png" alt="" />
                             <HyperText className="text-2xl sm:flex hidden">ferb</HyperText>
                         </Link>
                     </h1>
@@ -38,7 +41,31 @@ function Header() {
                         </InputGroupAddon>
                     </InputGroup>
                     <ModeToggle />
+                    <button className="sm:hidden flex"
+                        onClick={() => setopen(!open)}>
+                        {open ? <X /> : <Menu />}
+                    </button>
                 </div>
+            </div>
+            <div className={cn("fixed w-full bg-background border-b-2 m-0 py-2 px-4 flex flex-col items-start sm:hidden gap-4",
+                "transition-all ease-out duration-300 origin-top",
+                open ? "opacity-100 translate-y-0 pointer-events-auto" :
+                    "opacity-0 -translate-y-4 pointer-events-none")}>
+                <InputGroup className="rounded-full">
+                    <InputGroupInput placeholder="Search Documentation..." />
+                    <InputGroupAddon>
+                        <Search />
+                    </InputGroupAddon>
+                </InputGroup>
+
+                <div className="px-2 flex flex-col gap-4">
+                    <Link href="" className={cn(NavHover)}>Documentation</Link>
+                    <Link href="https://nextjs.org/" className={cn(NavHover)}>Next.js</Link>
+                    <Link href="https://zustand-demo.pmnd.rs/" className={cn(NavHover)}>Zustand</Link>
+                    <Link href="https://www.prisma.io/" className={cn(NavHover)}>Prisma</Link>
+                    <Link href="https://neon.com/" className={cn(NavHover)}>Neon</Link>
+                </div>
+
             </div>
         </header>
     )
