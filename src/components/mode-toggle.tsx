@@ -17,11 +17,11 @@ function ModeToggle() {
     return (
         <div className="flex justify-center">
             {theme === "dark" ?
-                <button className="cursor-pointer" onClick={() => setTheme("light")}>
+                <button className="cursor-pointer hover:rotate-12 transition-all duration-400 hover:scale-120" onClick={() => setTheme("light")}>
                     <Sun size={20} />
                 </button>
                 :
-                <button className="cursor-pointer" onClick={() => setTheme("dark")}>
+                <button className="cursor-pointer hover:rotate-12 transition-all duration-400 hover:scale-120" onClick={() => setTheme("dark")}>
                     <Moon size={20} />
                 </button>}
         </div>
